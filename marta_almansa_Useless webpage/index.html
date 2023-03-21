@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Spinning Square</title>
+	<style>
+		#square {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-top: -25px;
+			margin-left: -25px;
+			width: 200px;
+			height: 200px;
+			background-color: red;
+			animation-name: spin;
+			animation-duration: 1s;
+			animation-timing-function: linear;
+			animation-iteration-count: infinite;
+		}
+
+        button{
+            width: 300px;
+            height: 50px;
+            
+        }
+body{
+    text-align: center;
+}
+		@keyframes spin {
+			0% {transform: rotate(0deg);}
+			100% {transform: rotate(360deg);}
+		}
+	</style>
+</head>
+<body onclick="createSquare()">
+    <button>Press for a surprise</button>
+
+<script>
+	function createSquare() {
+		var square = document.createElement("div");
+		square.setAttribute("id", "square");
+
+        let variable1 = Math.floor(Math.random() * 90) + 10;
+
+
+        let variable2 = Math.floor(Math.random() * 90) + 10;
+
+        square.style.top = variable1 + "%"
+        square.style.left = variable2+ "%"
+
+    
+        console.log("Variable 1: " + variable1);
+        console.log("Variable 2: " + variable2);
+		document.body.appendChild(square);
+	}
+</script>
+
+</body>
+</html>
